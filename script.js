@@ -1,6 +1,7 @@
 //your JS code here. If required.
 
 let btn=document.querySelector("#btn");
+let output=document.querySelector("#output");
 
 btn.addEventListener("click",()=>{
 	let text=document.querySelector("#text").value.trim();
@@ -18,8 +19,8 @@ function masg(params,text) {
 async function helper(delay,text){
 	try{
 		let data=await masg(delay,text);
-		alert(data);
+		output.innerHTML=data;
 	}catch(er){
-		alert("error",er);
+		output.innerHTML=er;
 	}
 }
